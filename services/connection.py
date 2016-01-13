@@ -14,9 +14,13 @@ class PostgresqlConnection(object):
 
 	def connection(self):
 		try:
-		    self.conn = psycopg2.connect("dbname='mpan' user='mpan' host='localhost' ")
+		    self.conn = psycopg2.connect("dbname='" + 
+		    	env_config.get('db','dbname') + 
+		    	"' user='" + env_config.get('db','username') 
+		    	+ "' host='localhost' ")
 		except:
 		    print "I am unable to connect to the database"
+		    
 
 
 

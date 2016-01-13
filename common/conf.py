@@ -22,7 +22,6 @@ class EnvironmentConfig(object):
                 .format(section, key))
 
     def get(self, section, key):
-        import pdb; pdb.set_trace()
         return self._get(self.parser.get, section, key)
 
     def getint(self, section, key):

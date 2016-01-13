@@ -12,7 +12,6 @@ def get_text():
 		print e
 
 def check_accounts(check_account):
-	print "root"
 	deposit_money = btn(check_account, width=20, compound=LEFT, text="deposit money")
 	withdraw_money = btn(check_account, width=20, compound=LEFT, text="withdraw money")
 	transfer_money = btn(check_account, width=20,compound=LEFT, text="transfer money")
