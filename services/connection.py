@@ -1,5 +1,5 @@
 import psycopg2
-
+from common import env_config
 
 class PostgresqlConnection(object):
 
@@ -14,7 +14,7 @@ class PostgresqlConnection(object):
 
 	def connection(self):
 		try:
-		    self.conn = psycopg2.connect("dbname='yutengpan' user='yutengpan' host='localhost' ")
+		    self.conn = psycopg2.connect("dbname='mpan' user='mpan' host='localhost' ")
 		except:
 		    print "I am unable to connect to the database"
 
