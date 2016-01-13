@@ -1,9 +1,12 @@
 import psycopg2
-from services.connection import PostgresqlConnection as pgconn
+from services import pg_conn
 
 class PostgresqlHandlers(object):
 
     cur = None
+
+    def __init__(self):
+        self.set_cursor()
 
     def insert_values(self):
         return None
@@ -24,6 +27,10 @@ class PostgresqlHandlers(object):
         return None
 
     def check_account(self):
+        print "checking account..."
+        account_name = "visa_account"
+        statement = "select * from " + account_name
+        self.execute_statements(statement)
         return None
 
     def print_results(self, results):
@@ -33,12 +40,11 @@ class PostgresqlHandlers(object):
 
     def set_cursor(self):
         if not self.cur:
-            _pgconn = pgconn()
-            self.cur = _pgconn.get_connection().cursor()
+            self.cur = pg_conn.get_connection().cursor()
 
     def get_cursor(self):
         if self.cur:
-            return cur
+            return self.cur
 
     def execute_statements(self,statements):
         if self.cur:
