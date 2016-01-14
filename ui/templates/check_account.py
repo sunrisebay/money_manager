@@ -14,13 +14,17 @@ class CheckAccounts(BaseLayout):
 			print e
 
 	def check_accounts(self, check_account):
-		account_name = self.add_entry(check_account)
-		account_name_lbl = self.add_label(check_account, width=20, compound=LEFT, text="Account Name:")
-		cancel = self.add_button(check_account, width=20, compound=LEFT, 
+		upper_frame = self.add_frame(check_account)
+		bottom_frame = self.add_frame(check_account)
+		account_name = self.add_entry(upper_frame)
+		account_name_lbl = self.add_label(upper_frame, width=20, compound=LEFT, text="Account Name:")
+		cancel = self.add_button(bottom_frame, width=20, compound=RIGHT, 
 					text="Cancel", command=check_account.destroy)
-		submit = self.add_button(check_account, width=20, compound=LEFT, 
+		submit = self.add_button(bottom_frame, width=20, compound=LEFT, 
 					text="Submit", command= lambda: self.get_text(account_name))
 
+		upper_frame.pack(side=TOP)
+		bottom_frame.pack(side=BOTTOM)
 		account_name_lbl.pack()
 		account_name.pack()
 		submit.pack()
