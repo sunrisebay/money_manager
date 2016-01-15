@@ -16,17 +16,17 @@ class CheckAccounts(BaseLayout):
 	def check_accounts(self, check_account):
 		upper_frame = self.add_frame(check_account)
 		bottom_frame = self.add_frame(check_account)
-		account_name = self.add_entry(upper_frame)
-		account_name_lbl = self.add_label(upper_frame, width=20, compound=LEFT, text="Account Name:")
-		cancel = self.add_button(bottom_frame, width=20, compound=RIGHT, 
+		account_name = self.add_entry(upper_frame, width=30)
+		account_name_lbl = self.add_label(upper_frame, width=20, text="Account Name:")
+		cancel = self.add_button(bottom_frame, width=20, 
 					text="Cancel", command=check_account.destroy)
-		submit = self.add_button(bottom_frame, width=20, compound=LEFT, 
+		submit = self.add_button(bottom_frame, width=20, 
 					text="Submit", command= lambda: self.get_text(account_name))
 
 		upper_frame.pack(side=TOP)
 		bottom_frame.pack(side=BOTTOM)
-		account_name_lbl.pack()
-		account_name.pack()
-		submit.pack()
-		cancel.pack()
+		account_name_lbl.pack(side=LEFT, pady=10)
+		account_name.pack(padx=20, pady=10, side=LEFT)
+		submit.pack(padx=20, pady=10, side=LEFT)
+		cancel.pack(padx=20, pady=10, side=LEFT)
 
