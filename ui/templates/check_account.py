@@ -13,13 +13,13 @@ class CheckAccounts(BaseLayout):
 		else:
 			print e
 
-	def check_accounts(self, check_account):
-		upper_frame = self.add_frame(check_account)
-		bottom_frame = self.add_frame(check_account)
+	def check_accounts(self, base):
+		upper_frame = self.add_frame(base)
+		bottom_frame = self.add_frame(base)
 		account_name = self.add_entry(upper_frame, width=30)
 		account_name_lbl = self.add_label(upper_frame, width=20, text="Account Name:")
 		cancel = self.add_button(bottom_frame, width=20, 
-					text="Cancel", command=check_account.destroy)
+					text="Cancel", command=base.destroy)
 		submit = self.add_button(bottom_frame, width=20, 
 					text="Submit", command= lambda: self.get_text(account_name))
 

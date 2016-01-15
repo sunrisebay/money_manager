@@ -27,7 +27,8 @@ class MainLayout(BaseLayout):
 
     def initialize_buttons(self):
         deposit_money = self.add_button(self.frame_left, width=20, 
-                        compound=LEFT, text="deposit money")
+                        compound=LEFT, text="deposit money",
+                        command= lambda: self.main_actions.deposit_money_runner(self.ROOT))
         withdraw_money = self.add_button(self.frame_left, width=20, 
                         compound=LEFT, text="withdraw money")
         transfer_money = self.add_button(self.frame_left, width=20,
