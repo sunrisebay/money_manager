@@ -1,5 +1,6 @@
 from .templates import check_accounts as ca
 from .templates import deposit_moneys as dm
+from .templates import withdraw_moneys as wm
 import Tkinter as tk 
 
 class MainLayoutActions(object):
@@ -12,3 +13,6 @@ class MainLayoutActions(object):
 
     def deposit_money_runner(self, base):
         dm.deposit_money_layout(tk.Toplevel(base))
+
+    def withdraw_money_runner(self, base):
+        wm.withdraw_money_layout(tk.Toplevel(base))

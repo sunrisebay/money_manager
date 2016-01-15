@@ -30,7 +30,8 @@ class MainLayout(BaseLayout):
                         compound=LEFT, text="deposit money",
                         command= lambda: self.main_actions.deposit_money_runner(self.ROOT))
         withdraw_money = self.add_button(self.frame_left, width=20, 
-                        compound=LEFT, text="withdraw money")
+                        compound=LEFT, text="withdraw money",
+                        command= lambda: self.main_actions.withdraw_money_runner(self.ROOT))
         transfer_money = self.add_button(self.frame_left, width=20,
                         compound=LEFT, text="transfer money")
         exit = self.add_button(self.frame_left, width=20, compound=LEFT, 
