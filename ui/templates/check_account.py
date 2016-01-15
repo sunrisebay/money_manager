@@ -6,12 +6,6 @@ class CheckAccounts(BaseLayout):
 
 	def __init__(self):
 		pass
-		
-	def get_text(self, e):
-		if e:
-			print e.get()
-		else:
-			print e
 
 	def check_accounts(self, base):
 		upper_frame = self.add_frame(base)

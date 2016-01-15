@@ -30,3 +30,9 @@ class BaseLayout(object):
 
     def runner(self):
         self.ROOT.mainloop()
+
+    def get_text(self, e):
+        if e and e.get():
+            return e.get()
+        else:
+            return "*"

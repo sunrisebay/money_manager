@@ -10,13 +10,6 @@ class WithdrawMoney(BaseLayout):
     def withdraw(self, account_name, amount):
         print self.get_text(account_name) + self.get_text(amount)
 
-
-    def get_text(self, e):
-        if e and e.get():
-            return e.get()
-        else:
-            return "*"
-
     def withdraw_money_layout(self, base):
         upper_frame = self.add_frame(base)
         middle_frame = self.add_frame(base)

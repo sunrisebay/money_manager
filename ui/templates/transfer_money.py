@@ -12,13 +12,6 @@ class TransferMoney(BaseLayout):
             + self.get_text(to_account_name)
             + self.get_text(amount))
 
-
-    def get_text(self, e):
-        if e and e.get():
-            return e.get()
-        else:
-            return "*"
-
     def transfer_money_layout(self, base):
         from_frame = self.add_frame(base)
         to_frame = self.add_frame(base)
