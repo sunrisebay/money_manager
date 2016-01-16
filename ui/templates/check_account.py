@@ -7,15 +7,20 @@ class CheckAccounts(BaseLayout):
 	def __init__(self):
 		pass
 
+	def check(self, account_name):
+		print self.get_text(account_name)
+
 	def check_accounts(self, base):
 		upper_frame = self.add_frame(base)
 		bottom_frame = self.add_frame(base)
 		account_name = self.add_entry(upper_frame, width=30)
-		account_name_lbl = self.add_label(upper_frame, width=20, text="Account Name:")
+		account_name_lbl = self.add_label(upper_frame, width=20, 
+					text="Account Name:")
 		cancel = self.add_button(bottom_frame, width=20, 
 					text="Cancel", command=base.destroy)
 		submit = self.add_button(bottom_frame, width=20, 
-					text="Submit", command= lambda: self.get_text(account_name))
+					text="Submit", 
+					command= lambda: self.check(account_name))
 
 		upper_frame.pack(side=TOP)
 		bottom_frame.pack(side=BOTTOM)
